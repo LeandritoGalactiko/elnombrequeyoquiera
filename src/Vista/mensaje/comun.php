@@ -9,7 +9,7 @@
 <body>
     <h1><?= $titulo ?></h1>
     <p><?= $mensaje ?></p>
-    <p><a href="<?= BASE_URL ?>index.php">Volver al menú</a></p>
+    <p><a href="/index.php">Volver al menú</a></p>
 </body>
 
 </html>

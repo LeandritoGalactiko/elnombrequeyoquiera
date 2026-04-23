@@ -2,14 +2,20 @@
 
 namespace App\Controller;
 
+use App\Aplicacion\VerUsuario;
 use App\Core\View;
-use App\Dominio\Usuario;
 
 class UsuarioController
 {
     public function ver(int $id)
     {
-        $usuario = Usuario::obtenerPorId($id);
-        View::render('usuario/ver', ['usuario' => $usuario]);
+        $casoDeUso = new VerUsuario();
+        $usuario = $casoDeUso->ejecutar($id);
+
+        if ($usuario) {
+            View::render('usuario/ver', ['usuario' => $usuario]);
+        } else {
+            echo "Usuario no encontrado.";
+        }
+        }
     }
-}
