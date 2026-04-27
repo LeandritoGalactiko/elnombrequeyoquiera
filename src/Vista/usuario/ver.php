@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
+    <meta charset="UTF-8">
     <title>Ver Usuario</title>
-    <style>
-        body { font-family: Arial; margin: 40px; }
-        p { font-size: 18px; }
-    </style>
 </head>
+
 <body>
-    <h1>Datos del Usuario</h1>
-    <p>ID: <?= $usuario->id ?></p>
-    <p>Nombre: <?= $usuario->nombre ?></p>
-    <p>Email: <?= $usuario->email ?></p>
+    <a href="/index.php/usuario/listar">← volver</a>
+    <h2>Usuario #<?= $usuario->id ?></h2>
+    <p>Nombre: <?= htmlspecialchars($usuario->nombre) ?></p>
+    <p>Email: <?= htmlspecialchars($usuario->email) ?></p>
+    <a href="/index.php/usuario/editar/<?= $usuario->id ?>">editar</a>
 </body>
+
 </html>
